@@ -1,0 +1,11 @@
+{
+  "console-ninja.allowedHosts": [
+    "localhost",
+    "127.0.0.1:5500"
+  ],
+  "console-ninja.captureFunctions": true,
+  "console-ninja.toolsToEnableSupportAutomaticallyFor": {
+    "live-server": true,
+    "live-preview": true
+  }
+}
