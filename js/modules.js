@@ -12,7 +12,7 @@ export const invertObj = (obj) => {
 export const replaceVocal = (string, filterObj) => {
   return filterString(string)
     ? string.replace(/[aeiou]/gi, (match) => filterObj[match] || match)
-    : new Error("no pasa validacion");
+    : new Error("no pasa validacion");  
 };
 
 export const replaceWord = (string, filterObj) => {
