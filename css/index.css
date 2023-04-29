@@ -30,6 +30,10 @@
   background-color: var(--secondary-color);
 }
 
+.secondary-bg:active{
+  opacity: 0.9;
+}
+
 .border-btn-primary {
   border: solid var(--primary-color);
 }
@@ -37,6 +41,15 @@
 .border-btn-secondary {
   background-color: transparent;
   border: 1px solid var(--secondary-color) !important;
+}
+
+.border-btn-secondary:hover{
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.border-btn-secondary:active{
+  opacity: 0.9;
 }
 
 .text-message {
@@ -57,6 +70,36 @@
   margin: 1rem 0;
   padding: 1rem 0;
   transition: all 0.2s ease-in;
+}
+
+.alertt{
+  width: auto;
+  right: -30%;
+  bottom: 10%;
+  padding: 1rem;
+  border-radius: 8px;
+  position: absolute;
+  text-align: center;
+  animation: 3s ease slidein;
+}
+
+.alertt-danger{
+  color: #740505;
+  background-color: #da4d4d;
+}
+
+.alertt-success{
+  color: #057426;
+  background-color: #6dbd7e;
+}
+
+@keyframes slidein {
+  from {
+    right: -30%;
+  }
+  to {
+    right: 1%;
+  }
 }
 
 @media (max-width: 375px) {

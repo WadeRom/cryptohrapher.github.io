@@ -1,5 +1,6 @@
 const display = document.querySelector("#show");
 const copyBtn = document.querySelector("#copy");
+const node = document.querySelector("#alert");
 const inputField = document.querySelector("#message");
 const messageCard = document.querySelector("#emptyMessage");
 
@@ -14,28 +15,32 @@ const filter = {
 const changeText = (message) => {
   message ? (display.innerHTML = message) : false;
   messageCard.className === "d-none"
-    ? console.log("existe")
+    ? false
     : (messageCard.classList.add("d-none"), copyBtn.classList.remove("d-none"));
 };
 
 const encrypt = () => {
   import("./modules.js")
     .then((module) => module.replaceVocal(inputField.value, filter))
-    .then((response) => changeText(response))
-    .catch((error) => console.log(error));
+    .then((response) => {
+      response ? changeText(response) : false;
+    });
 };
 
 const decrypt = () => {
   import("./modules.js")
     .then((module) => module.replaceWord(display.textContent, filter))
-    .then((response) => changeText(response))
-    .catch((error) => console.log(error));
+    .then((response) => {
+      response ? changeText(response) : false;
+    });
 };
 
 const copyMessage = () => {
   const copyText = display.textContent;
   navigator.clipboard
     .writeText(copyText)
-    .then((success) => alert("Mensaje copiado"))
-    .catch((error) => alert("No se pudo copiar"));
-};
+    .then(
+      import("./modules.js")
+      .then(module => module.lauchAlert('Mensaje copiado al portapapel!', 'alertt-success'))
+    )
+  }
